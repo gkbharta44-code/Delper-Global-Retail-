@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Delper Retail: Alignment with Online Vendors</title>
+<style>
+:root { color-scheme: light; --bg:#f6f7f9; --surface:#fff; --text:#1d2330; --muted:#6b7280; --border:#e3e6eb; --accent:#2563eb; --ok:#15803d; --warn:#b45309; --bad:#b91c1c; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --bg:#0f1218; --surface:#171c25; --text:#e6e9ef; --muted:#9aa3b2; --border:#2a3140; --accent:#6ea8ff; --ok:#4ade80; --warn:#fbbf24; --bad:#f87171; } }
+:root[data-theme="dark"] { color-scheme: dark; --bg:#0f1218; --surface:#171c25; --text:#e6e9ef; --muted:#9aa3b2; --border:#2a3140; --accent:#6ea8ff; --ok:#4ade80; --warn:#fbbf24; --bad:#f87171; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.5; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+header, main { max-width:1100px; margin:0 auto; padding-left:24px; padding-right:24px; }
+header { padding-top:32px; }
+h1 { margin:0 0 6px; font-size:1.7rem; } h2 { font-size:1.15rem; margin:0 0 12px; }
+.sub { color:var(--muted); margin:0; max-width:800px; }
+main { padding-bottom:48px; }
+section { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px; margin:20px 0; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; }
+.card { background:var(--bg); border:1px solid var(--border); border-radius:10px; padding:14px; }
+.big { font-size:1.5rem; font-weight:bold; color:var(--accent); } .lbl { color:var(--muted); font-size:0.85rem; }
+.scroll { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:0.9rem; }
+th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+th { font-size:0.78rem; text-transform:uppercase; letter-spacing:.03em; color:var(--muted); }
+td.num, th.num { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.tag { font-weight:bold; font-size:0.8rem; padding:2px 8px; border-radius:999px; border:1px solid currentColor; white-space:nowrap; }
+.ok { color:var(--ok); } .warn { color:var(--warn); } .bad { color:var(--bad); }
+.note { color:var(--muted); font-size:0.88rem; }
+ul { padding-left:20px; margin:6px 0; } li { margin:6px 0; }
+</style></head>
+<body>
+<header><h1>Delper Retail: Alignment with Online Vendors</h1><p class="sub">Track 2 buyer and seller plan checked against the Online Vendors 195 Countries dataset.</p></header>
+<main>
+<section>
+<h2>Retail base</h2>
+<div class="cards">
+<div class="card"><div class="big">6,000M</div><div class="lbl">Global users (agreed basis)</div></div>
+<div class="card"><div class="big">888M</div><div class="lbl">India internet users (scaled)</div></div>
+<div class="card"><div class="big">12.20M</div><div class="lbl">India online vendors (scaled)</div></div>
+<div class="card"><div class="big">6B</div><div class="lbl">Users for lead-gen calibration (agreed basis)</div></div>
+</div>
+</section>
+
+<section>
+<h2>Buyers and sellers vs dataset</h2>
+<div class="scroll"><table>
+<thead><tr><th>Plan figure</th><th class="num">Plan value</th><th>Dataset base</th><th class="num">Base value</th><th class="num">Share</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Year 5 certified sellers (15,000)</td><td class="num">15,000</td><td>India online vendors (dataset, scaled)</td><td class="num">12,197,290</td><td class="num">0.12%</td><td><span class="tag ok">Consistent</span></td></tr>
+<tr><td>Year 5 buyers, 7.5M (one USD 600 order each)</td><td class="num">7,500,000</td><td>India internet users (dataset, scaled)</td><td class="num">887,962,731</td><td class="num">0.84%</td><td><span class="tag ok">Consistent</span></td></tr>
+<tr><td>ONDC potential buyers (200M)</td><td class="num">200,000,000</td><td>India internet users (dataset, scaled)</td><td class="num">887,962,731</td><td class="num">22.52%</td><td><span class="tag warn">Stretch, test</span></td></tr>
+<tr><td>Year 10 buyers, 6B</td><td class="num">6,000,000,000</td><td>Global users (6B, agreed basis)</td><td class="num">6,000,000,000</td><td class="num">100.00%</td><td><span class="tag warn">Every user buys</span></td></tr>
+<tr><td>Users behind lead-gen calibration (6B, agreed basis)</td><td class="num">6,000,000,000</td><td>Global users (6B, agreed basis)</td><td class="num">6,000,000,000</td><td class="num">100.00%</td><td><span class="tag ok">Equals base</span></td></tr>
+</tbody></table></div>
+<p class="note">Status: Consistent under 5% of base, Stretch 5–50%, Exceeds base above 50%. Sellers are compared with India vendors, because the Year 5 target is India only through ONDC.</p>
+</section>
+
+
+<section>
+<h2>Retail spend against TAM</h2>
+<div class="scroll"><table>
+<thead><tr><th>Scenario</th><th class="num">Annual spend</th><th class="num">Share of consumer TAM ($4,749bn)</th></tr></thead>
+<tbody><tr><td>6B users × USD 600 per year (Year 10)</td><td class="num">$3,600bn</td><td class="num">75.8%</td></tr></tbody></table></div>
+<p class="note">Retail spend uses USD 600 per user per year, the same rate as the consumer TAM, applied to the users shown.</p>
+</section>
+
+
+<section>
+<h2>Business process</h2>
+<h3 style="font-size:1rem;margin:12px 0 8px">Customer journey</h3>
+<div class="scroll"><table><thead><tr><th>Step</th><th>Stage</th><th>What happens</th></tr></thead><tbody>
+<tr><td>1</td><td>Browse</td><td>Views the static catalogues of sellers. Free.</td></tr>
+<tr><td>2</td><td>Enquire</td><td>Places an enquiry with Delper to avail independent 3PQC and the RTB. No separate fee.</td></tr>
+<tr><td>3</td><td>Compare bids</td><td>Vetted sellers bid. Bids are ranked by verified QC pass rate and inventory data, not ad spend.</td></tr>
+<tr><td>4</td><td>Choose and pay</td><td>Selects a bid and pays the all-inclusive price into escrow. Taxes and FX conversion are charged extra at checkout.</td></tr>
+<tr><td>5</td><td>Inspect</td><td>3PQC inspects the order and issues the sign-off code, clearing it for dispatch.</td></tr>
+<tr><td>6</td><td>Receive</td><td>Goods are delivered to the doorstep. The customer issues a satisfaction certificate within 15 days, which releases escrow.</td></tr>
+<tr><td>7</td><td>Return</td><td>Verified sellers and protected payments bring the customer back for repeat purchases.</td></tr>
+</tbody></table></div>
+<h3 style="font-size:1rem;margin:20px 0 8px">Seller journey</h3>
+<div class="scroll"><table><thead><tr><th>Step</th><th>Stage</th><th>What happens</th></tr></thead><tbody>
+<tr><td>1</td><td>List</td><td>Lists a static catalogue free, with no onboarding fee.</td></tr>
+<tr><td>2</td><td>Onboard</td><td>Pays the USD 100 annual business onboarding fee and is certified as a Healthy Seller.</td></tr>
+<tr><td>3</td><td>Agree terms</td><td>Agrees to RTB participation, with lead generation deducted from sale proceeds only on escrow release.</td></tr>
+<tr><td>4</td><td>Bid</td><td>Receives enquiries and bids in the RTB. RTB and QC costs are prepaid at actual cost, non-refundable.</td></tr>
+<tr><td>5</td><td>Fulfil</td><td>Wins the order and produces or prepares the goods.</td></tr>
+<tr><td>6</td><td>Pass QC</td><td>3PQC rates the product. Passing products get the sign-off code and RTB visibility. Low-rated products get no further QC or RTB expense and stay listed with their rating.</td></tr>
+<tr><td>7</td><td>Get paid</td><td>After delivery and the satisfaction certificate, escrow is released. The 2% commission and lead generation are deducted and the balance is paid.</td></tr>
+<tr><td>8</td><td>Repeat</td><td>Returning customers place new enquiries, and lead generation supports repeat sales.</td></tr>
+</tbody></table></div>
+<p class="note">Escrow is released only after delivery and the customer's satisfaction certificate, due within 15 days. Buyer acquisition runs through ONDC in India only, as proposed, with Axis Bank escrow in progress.</p>
+</section>
+
+
+
+<section>
+<h2>Revenue generation breakup</h2>
+<p class="note">Each user buys one USD 600 order a year. Delper earns a 2% commission (USD 12.00) plus USD 66.67 of lead generation, deducted from seller proceeds at escrow release, so gross profit is USD 78.67 per user a year (13.1% of the order value). Figures are gross profit, before Delper's own taxes and expenses.</p>
+<h3 style="font-size:1rem;margin:14px 0 8px">Per USD 600 order</h3>
+<div class="scroll"><table><thead><tr><th class="">Component</th><th class="num">USD per order</th><th class="num">Share of USD 600</th></tr></thead><tbody>
+<tr><td class="">Commission (2%)</td><td class="num">12.00</td><td class="num">2.0%</td></tr>
+<tr><td class="">Lead generation</td><td class="num">66.67</td><td class="num">11.1%</td></tr>
+<tr><td class="">Delper gross profit</td><td class="num">78.67</td><td class="num">13.1%</td></tr>
+</tbody></table></div>
+<h3 style="font-size:1rem;margin:18px 0 8px">Years 2 to 5</h3>
+<div class="scroll"><table><thead><tr><th class="">Year</th><th class="num">Buyers (one order each)</th><th class="num">Certified sellers</th><th class="num">Purchases ($M)</th><th class="num">Commission ($M)</th><th class="num">Lead gen ($M)</th><th class="num">Gross profit ($M)</th></tr></thead><tbody>
+<tr><td class="">Year 2</td><td class="num">80,000</td><td class="num">400</td><td class="num">48.00</td><td class="num">0.96</td><td class="num">5.33</td><td class="num">6.29</td></tr>
+<tr><td class="">Year 3</td><td class="num">600,000</td><td class="num">2,000</td><td class="num">360.00</td><td class="num">7.20</td><td class="num">40.00</td><td class="num">47.20</td></tr>
+<tr><td class="">Year 4</td><td class="num">2,400,000</td><td class="num">6,000</td><td class="num">1,440.00</td><td class="num">28.80</td><td class="num">160.00</td><td class="num">188.80</td></tr>
+<tr><td class="">Year 5</td><td class="num">7,500,000</td><td class="num">15,000</td><td class="num">4,500.00</td><td class="num">90.00</td><td class="num">500.00</td><td class="num">590.00</td></tr>
+</tbody></table></div>
+<h3 style="font-size:1rem;margin:18px 0 8px">Year 5 lead generation by stream (USD M, 7.5M orders)</h3>
+<div class="scroll"><table><thead><tr><th class="num">#</th><th class="">Stream</th><th class="num">Revenue ($M)</th><th class="num">Share</th></tr></thead><tbody>
+<tr><td class="num">1</td><td class="">Fixed B2B Predictive Subscriptions</td><td class="num">132.90</td><td class="num">26.6%</td></tr>
+<tr><td class="num">2</td><td class="">Holiday B2B Food Commodity Matching</td><td class="num">59.86</td><td class="num">12.0%</td></tr>
+<tr><td class="num">3</td><td class="">Predictive Real-Time Bidding Spreads</td><td class="num">55.87</td><td class="num">11.2%</td></tr>
+<tr><td class="num">4</td><td class="">O2O Postal Media Product Indexing</td><td class="num">43.20</td><td class="num">8.6%</td></tr>
+<tr><td class="num">5</td><td class="">Weekly Wellness Product Matching</td><td class="num">43.20</td><td class="num">8.6%</td></tr>
+<tr><td class="num">6</td><td class="">Live Broadcast Video Commerce Fees</td><td class="num">40.91</td><td class="num">8.2%</td></tr>
+<tr><td class="num">7</td><td class="">Weekly Apparel and T-Shirt Matching</td><td class="num">21.60</td><td class="num">4.3%</td></tr>
+<tr><td class="num">8</td><td class="">Home Screen Quad-Banner Placements</td><td class="num">19.76</td><td class="num">4.0%</td></tr>
+<tr><td class="num">9</td><td class="">B2G Public Sector Governance Portal Fees</td><td class="num">17.96</td><td class="num">3.6%</td></tr>
+<tr><td class="num">10</td><td class="">Optional Cost-Per-View Movie Ads</td><td class="num">14.97</td><td class="num">3.0%</td></tr>
+<tr><td class="num">11</td><td class="">Monthly Employment Classifieds Network</td><td class="num">9.98</td><td class="num">2.0%</td></tr>
+<tr><td class="num">12</td><td class="">Capital Markets Retail Allocation Cuts (target 18%)</td><td class="num">8.98</td><td class="num">1.8%</td></tr>
+<tr><td class="num">13</td><td class="">Credit Markets Matching Network Fees (target 18%)</td><td class="num">8.98</td><td class="num">1.8%</td></tr>
+<tr><td class="num">14</td><td class="">Matrimony AdTech Target Layers</td><td class="num">4.99</td><td class="num">1.0%</td></tr>
+<tr><td class="num">15</td><td class="">Monthly Local Travel Placements</td><td class="num">4.99</td><td class="num">1.0%</td></tr>
+<tr><td class="num">16</td><td class="">Monthly Culinary Kit Smart Contracts</td><td class="num">4.99</td><td class="num">1.0%</td></tr>
+<tr><td class="num">17</td><td class="">InsureShield Retail Broker Cuts (target 18%)</td><td class="num">4.49</td><td class="num">0.9%</td></tr>
+<tr><td class="num">18</td><td class="">Wrapper Branding Packaging Partnerships (CPM)</td><td class="num">1.38</td><td class="num">0.3%</td></tr>
+<tr><td class="num">19</td><td class="">Bi-Weekly Local Hero Media Slots</td><td class="num">1.00</td><td class="num">0.2%</td></tr>
+<tr><td class="num"></td><td class="">Total</td><td class="num">500.00</td><td class="num">100%</td></tr>
+</tbody></table></div>
+<h3 style="font-size:1rem;margin:18px 0 8px">Years 6 to 10</h3>
+<div class="scroll"><table><thead><tr><th class="">Year</th><th class="num">Buyers (one USD 600 order each)</th><th class="num">Gross profit ($M)</th></tr></thead><tbody>
+<tr><td class="">Year 6</td><td class="num">28.6M</td><td class="num">2,246</td></tr>
+<tr><td class="">Year 7</td><td class="num">108.7M</td><td class="num">8,552</td></tr>
+<tr><td class="">Year 8</td><td class="num">413.9M</td><td class="num">32,562</td></tr>
+<tr><td class="">Year 9</td><td class="num">1,575.9M</td><td class="num">123,972</td></tr>
+<tr><td class="">Year 10</td><td class="num">6.0B</td><td class="num">472,000</td></tr>
+</tbody></table></div>
+<p class="note">Years 6 to 10 are a constant-growth illustration, not a forecast. Buyers grow about 3.8x a year from 7.5M in Year 5 to 6.0B in Year 10, when gross profit is USD 472,000M. Lead generation is earned through 19 event streams, which are calibrated at USD 66.67 per user.</p>
+</section>
+
+
+
+<section>
+<h2>Use of funds (Track B, USD 4.00M)</h2>
+<div class="scroll"><table><thead><tr><th class="">Use</th><th class="num">Amount (USD M)</th></tr></thead><tbody>
+<tr><td class="">Core team and engineering (platform, threat ingestion, verification ledger)</td><td class="num">1.60</td></tr>
+<tr><td class="">3PQC infrastructure (partner onboarding, audits, quality insurance)</td><td class="num">0.80</td></tr>
+<tr><td class="">Escrow, legal and licensing</td><td class="num">0.50</td></tr>
+<tr><td class="">Operational contingency</td><td class="num">0.40</td></tr>
+<tr><td class="">Supplier RTB vetting (factory onboarding and verification)</td><td class="num">0.40</td></tr>
+<tr><td class="">Cloud and integration infrastructure (Shopify, WooCommerce, ONDC connectors)</td><td class="num">0.30</td></tr>
+<tr><td class="">Total</td><td class="num">4.00</td></tr>
+</tbody></table></div>
+</section>
+<section>
+<h2>Notes</h2>
+<ul>
+<li>Retail take rate: 13.1% of the USD 600 order (USD 78.67 gross profit per order: USD 12.00 commission plus USD 66.67 lead generation).</li>
+<li>Each user buys one USD 600 order a year, giving USD 78.67 gross profit per user. Year 10 at 6B buyers means every user in the base buys, which is a stretch case. It is possible but should be treated as an upside case.</li>
+<li>ONDC reports about 500,000 sellers, or 4.1% of India's scaled dataset vendors. Use the ONDC figure for the pilot and the dataset figure for the market ceiling.</li>
+<li>Users are 6B for both retail and bulk, as agreed. The lead-gen calibration stays at USD 66.67 per user, so the pool at this base is USD 400B. Internet users and vendors are scaled country by country to match (users by 1.1958 where penetration allows, vendors in tandem).</li>
+</ul>
+</section>
+</main>
+</body></html>
